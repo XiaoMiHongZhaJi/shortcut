@@ -1,0 +1,14 @@
+[Unit]
+Description=clash Client Daemon
+After=network.target 
+Wants=network.target
+
+[Service]
+Type=simple
+PIDFile=/var/run/clash.pid
+ExecStart=/root/clash/clash-linux -d /root/clash
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

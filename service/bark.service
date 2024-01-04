@@ -1,0 +1,14 @@
+[Unit]
+Description=bark Client Daemon
+After=network.target 
+Wants=network.target
+
+[Service]
+Type=simple
+PIDFile=/var/run/bark.pid
+ExecStart=/usr/local/bark/bark-server --addr 0.0.0.0:8082 --data /usr/local/bark/bark-data
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

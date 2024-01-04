@@ -1,0 +1,14 @@
+[Unit]
+Description=hysteria Client2 Daemon
+After=network.target 
+Wants=network.target
+
+[Service]
+Type=simple
+PIDFile=/var/run/hysteria2.pid
+ExecStart=/root/hysteria/hysteria-linux -c /root/hysteria/rn.yaml
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

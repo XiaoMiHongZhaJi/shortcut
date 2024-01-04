@@ -1,0 +1,14 @@
+[Unit]
+Description=xray Client Daemon
+After=network.target 
+Wants=network.target
+
+[Service]
+Type=simple
+PIDFile=/var/run/xray.pid
+ExecStart=/root/xray/xray run -config /root/xray/config.json
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

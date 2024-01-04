@@ -1,0 +1,14 @@
+[Unit]
+Description=v2ray Client Daemon
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+PIDFile=/var/run/v2ray.pid
+ExecStart=/root/v2ray/v2ray run -config /root/v2ray/config.json
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
