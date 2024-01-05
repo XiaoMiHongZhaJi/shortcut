@@ -68,9 +68,9 @@ if (isset($_POST['terminate']) && $running) {
 
 <div class="container mt-1">
     <div class="p-4 bg-secondary rounded">
-        <h1 class="text-white">yt-dlp 状态信息</h1>
-        <?php if ($running): ?>
-            <div class="bg-light p-3 mt-3">
+        <h2 class="text-white">yt-dlp 状态信息</h2>
+        <div class="bg-light p-3 mt-3">
+            <?php if ($running): ?>
                 <p>yt-dlp 正在运行，进程信息如下：</p>
                 <textarea class="form-control" rows="2" readonly><?= $processInfo ?></textarea>
                 <form method="post">
@@ -78,30 +78,123 @@ if (isset($_POST['terminate']) && $running) {
                 </form>
                 <p class="mt-4">实时下载日志：</p>
                 <textarea class="form-control" rows="4" readonly><?= $logContent ?></textarea>
-            </div>
-            <script>
-                // 每隔2秒刷新页面
-                setTimeout(function () {
-                    location.reload();
-                }, 2000);
-            </script>
-        <?php else: ?>
-            <div class="bg-light p-3 mt-3">
+                <script>
+                    // 每隔2秒刷新页面
+                    setTimeout(function () {
+                        location.reload();
+                    }, 2000);
+                </script>
+            <?php else: ?>
                 <p>yt-dlp 未在运行。上次下载日志：</p>
                 <textarea class="form-control" rows="4" readonly><?= $logContent ?></textarea>
-            </div>
-        <?php endif; ?>
+            <?php endif; ?>
+        </div>
     </div>
 
     <div class="bg-secondary p-4 mt-2 rounded">
-        <form method="post">
-            <h2 class="text-white">下载视频</h2>
-            <div class="bg-light p-3 mt-3 rounded">
+        <h2 class="text-white">下载视频</h2>
+        <div class="bg-light p-3 mt-3 rounded">
+            <form method="post">
                 <textarea class="form-control" placeholder="请输入url" name="url" rows="3" required></textarea>
                 <input class="btn btn-primary mt-2" type="submit" <?php if ($running): echo "btn-disable disabled"; endif; ?> value="提交">
-            </div>
-        </form>
+            </form>
+        </div>
+    </div>
+
+    <div class="bg-secondary text-white p-4 mt-2 rounded">
+        <h2>已下载的视频</h2>
+        <div class="bg-light p-3 mt-3 rounded">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th style="min-width: 100px;">类型</th>
+                    <th>文件名</th>
+                    <th style="min-width: 100px; text-align: right;">文件大小</th>
+                    <th style="min-width: 165px; text-align: right;">修改日期</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                // 获取当前目录路径
+                $dir = './';
+                // 递归遍历文件夹
+                function listFiles($dir, $page)
+                {
+                    if (is_dir($dir)) {
+                        if ($dh = opendir($dir)) {
+                            while (($file = readdir($dh)) !== false) {
+                                if ($file == '.' || $file == '..') {
+                                    continue;
+                                }
+                                $textIndent = $page * 10;
+                                if (is_dir($dir . $file)) {
+                                    echo "<tr style='text-indent: " . $textIndent . "px;'>";
+                                    echo "<td>文件夹</td>";
+                                    echo "<td>" . $file . "</td>";
+                                    echo "<td></td>";
+                                    echo "<td></td>";
+                                    echo "</tr>";
+                                    listFiles($dir . $file . "/", $page + 1);
+                                } else {
+                                    $filePath = $dir . $file;
+                                    $fileSize = filesize($filePath);
+                                    $fileSizeFormatted = formatFileSize($fileSize);
+                                    $fileModified = date("Y-m-d H:i:s", filemtime($filePath));
+                                    $fileType = getFileType($file);
+                                    echo "<tr style='text-indent: " . $textIndent . "px;'>";
+                                    echo "<td>" . $fileType . "</td>";
+                                    echo "<td><a href='" . $filePath . "' download>" . $file . "</a></td>";
+                                    echo "<td style='text-indent:0px; text-align: right;'>" . $fileSizeFormatted . "</td>";
+                                    echo "<td style='text-indent:0px; text-align: right;'>" . $fileModified . "</td>";
+                                    echo "</tr>";
+                                }
+                            }
+                            closedir($dh);
+                        }
+                    }
+                }
+
+                // 格式化文件大小
+                function formatFileSize($size)
+                {
+                    $units = array('B', 'KB', 'MB', 'GB', 'TB');
+                    $i = 0;
+                    while ($size >= 1024 && $i < 4) {
+                        $size /= 1024;
+                        $i++;
+                    }
+                    return round($size, 2) . ' ' . $units[$i];
+                }
+
+                // 获取文件类型
+                function getFileType($file)
+                {
+                    $extension = pathinfo($file, PATHINFO_EXTENSION);
+                    if (!empty($extension)) {
+                        return strtoupper($extension) . "文件";
+                    } else {
+                        return "文件";
+                    }
+                }
+
+                // 调用递归函数
+                listFiles($dir, 0);
+                ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+<!--<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    console.log(window.innerWidth)
+    var width = window.innerWidth;
+    if(width < 768){
+        $("tr th:eq(2)").hide()
+        $("tr th:eq(3)").hide()
+        $("tr td:eq(2)").hide()
+        $("tr td:eq(3)").hide()
+    }
+</script>-->
 </body>
 </html>
