@@ -6,6 +6,8 @@ const token = "botxxxxxxx";
 
 export default {
     async fetch(request, env, ctx){
+        const ip = request.headers.get("Cf-Connecting-Ip")
+        console.log("ip", ip);
         let url = request.url;
         console.log("url", url);
         url = url.substring(url.indexOf("//") + 2);
@@ -21,9 +23,10 @@ export default {
         console.log("chat_id", chat_id);
         if(!chat_id){
             chat_id = default_chat_id;
-            if(key){
-                text = key + "/" + text;
+            if(!key){
+                return Response.json({msg: ip});
             }
+            text = key + "/" + text + " from ip: " + request.headers.get("Cf-Connecting-Ip");
         }
         let newUrl = 'https://api.telegram.org/';
         newUrl += token;
@@ -34,8 +37,8 @@ export default {
         const response = await fetch(newUrl);
         console.log("response", response);
         if(response.ok){
-            return Response.json({msg: "发送成功"});
+            return Response.json({msg: "send success", your_ip: ip});
         }
-        return Response.json({msg: response.statusText});
+        return Response.json({msg: response.statusText, your_ip: ip});
     }
 }

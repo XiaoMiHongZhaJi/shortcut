@@ -56,7 +56,7 @@
                 submitSignInData();
             }, randomNum())
             var a = new XMLHttpRequest();
-            a.open("GET", "https://reminderapi.joyslinktech.com/v1/push/key/xxx?title=auto&description=qd_done");
+            a.open("GET", "https://message.chenyifaer.online/xmhzj/qd_done");
             a.send();
         }, randomNum())
     }
@@ -79,7 +79,7 @@
                 submitSignOutData();
             }, randomNum())
             var a = new XMLHttpRequest();
-            a.open("GET", "https://reminderapi.joyslinktech.com/v1/push/key/xxx?title=auto&description=qt_done");
+            a.open("GET", "https://message.chenyifaer.online/xmhzj/qt_done");
             a.send();
         }, randomNum())
     }
@@ -155,7 +155,7 @@
                         if (hours < 9) {
                             // 发送通知
                             var a = new XMLHttpRequest();
-                            a.open("GET", "https://reminderapi.joyslinktech.com/v1/push/key/xxx?title=auto&description=" + qd_time);
+                            a.open("GET", "https://message.chenyifaer.online/xmhzj/" + qd_time);
                             a.send();
                         }
                     }else{
@@ -176,7 +176,7 @@
                         if (hours < 18) {
                             // 发送通知
                             var a = new XMLHttpRequest();
-                            a.open("GET", "https://reminderapi.joyslinktech.com/v1/push/key/xxx?title=auto&description=" + qt_time);
+                            a.open("GET", "https://message.chenyifaer.online/xmhzj/" + qt_time);
                             a.send();
                         }
                     }else{
