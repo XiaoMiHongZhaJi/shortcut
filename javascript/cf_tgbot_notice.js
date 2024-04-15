@@ -26,7 +26,10 @@ export default {
             if(!key){
                 return Response.json({msg: ip});
             }
-            text = key + "/" + text + " from ip: " + request.headers.get("Cf-Connecting-Ip");
+            text = key + "/" + text + "%0A【from ip: " + request.headers.get("Cf-Connecting-Ip") + "】";
+        }
+        if(text.indexOf("/") > -1){
+            text = text.replace("/", "%0A");
         }
         let newUrl = 'https://api.telegram.org/';
         newUrl += token;

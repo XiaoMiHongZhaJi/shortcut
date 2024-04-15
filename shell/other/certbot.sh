@@ -1,6 +1,6 @@
 #!/bin/sh
 
-certbot certonly -d "chenyifaer.online" -d "*.chenyifaer.online" --manual --preferred-challenges dns
+certbot certonly -d "chenyifaer.shop" -d "*.chenyifaer.shop" --manual --preferred-challenges dns
 
 #renew
 #certbot renew

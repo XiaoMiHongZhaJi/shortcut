@@ -23,7 +23,7 @@ echo "nginx安装完成"
 sleep 2
 
 echo "\n2 正在安装php..."
-apt install -y php php-fpm php7.3-mysql php7.3-gd php7.3-curl php7.3-mbstring > /dev/null 2>&1
+apt install -y php php-fpm php7.4-mysql php7.4-gd php7.4-curl php7.4-mbstring > /dev/null 2>&1
 echo "php安装完成"
 sleep 2
 
@@ -36,7 +36,7 @@ echo '    root /var/www/html;' >> /etc/nginx/sites-enabled/yt-webdownload
 echo "	server_name $1;" >> /etc/nginx/sites-enabled/yt-webdownload
 echo '	location ~ \.php$ {' >> /etc/nginx/sites-enabled/yt-webdownload
 echo '		include snippets/fastcgi-php.conf;' >> /etc/nginx/sites-enabled/yt-webdownload
-echo '        fastcgi_pass unix:/run/php/php7.3-fpm.sock;' >> /etc/nginx/sites-enabled/yt-webdownload
+echo '        fastcgi_pass unix:/run/php/php7.4-fpm.sock;' >> /etc/nginx/sites-enabled/yt-webdownload
 echo '	}' >> /etc/nginx/sites-enabled/yt-webdownload
 echo '}' >> /etc/nginx/sites-enabled/yt-webdownload
 systemctl reload nginx

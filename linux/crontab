@@ -1,0 +1,15 @@
+
+# char_downloader
+35 20   * * *	root    /root/jar/chat_downloader_twitch_t.sh > /dev/null &
+25 21   * * *	root    /root/jar/chat_downloader_twitch_l.sh > /dev/null &
+
+# ddns
+2  *    * * *   root    /usr/local/bin/ddns -c /root/ddns/ddns.json
+
+# media_downloader
+45 2    * * *   root    /root/telegram_media_downloader/tg_collect.sh
+0  *    * * *   root    /root/telegram_media_downloader/wild_like.sh
+
+# auto_space
+5  4    * * *   root    /root/auto_space/auto_space.sh >> /root/auto_space/auto_space.log
+
