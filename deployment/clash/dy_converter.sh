@@ -43,11 +43,56 @@ echo "开始下载url:
 ${url}"
 wget ${url} -q -O dy.yaml
 
+calculate_time_difference() {
+    # 获取当前时间的时间戳
+    current=$(date +%s)
+
+    # 获取修改时间的时间戳
+    #modified=$1
+	modified=$(</dev/stdin)
+    modified=$(date -ud "$modified" +%s)
+
+    # 计算时间差
+    diff=$((current - modified))
+
+    # 计算天数、小时数、分钟数和秒数
+    days=$((diff / 86400))
+    diff=$((diff % 86400))
+    hours=$((diff / 3600))
+    diff=$((diff % 3600))
+    minutes=$((diff / 60))
+    seconds=$((diff % 60))
+
+    # 输出结果
+    output=""
+
+    if [ $days -gt 0 ]; then
+        output="$days 天 "
+    fi
+
+    if [ $hours -gt 0 ]; then
+        output="$output$hours 小时 "
+    fi
+
+    if [ $minutes -gt 0 ]; then
+        output="$output$minutes 分钟 "
+    fi
+
+    if [ $seconds -gt 0 ]; then
+        output="$output$seconds 秒 "
+    fi
+
+    output="$output前"
+
+    echo "最后更新 $output"
+}
+
 if [ -f "dy.yaml" ]; then
-  echo "下载完成："
-  echo "$(head -n 10 dy.yaml)"
+  #echo "下载完成："
+  #echo "$(head -n 5 dy.yaml)"
   if [ "$(head -n 1 dy.yaml | grep port)" ]; then
     echo "订阅下载成功"
+    echo $(curl -I -s $url | grep "last-modified" | awk -F": " '{print $2}' | calculate_time_difference)
   else
     echo "订阅下载失败，文件为空或内容错误！"
     exit
@@ -238,4 +283,5 @@ if [ -f "config_bak.yaml" ]; then
   echo "已恢复原配置文件"
 
 fi
+
 

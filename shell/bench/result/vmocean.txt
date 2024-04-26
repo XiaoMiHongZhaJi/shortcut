@@ -1,0 +1,73 @@
+# ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## #
+#              Yet-Another-Bench-Script              #
+#                     v2024-03-05                    #
+# https://github.com/masonr/yet-another-bench-script #
+# ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## #
+
+Thu 18 Apr 2024 09:27:06 PM EDT
+
+Basic System Information:
+---------------------------------
+Uptime     : 6 days, 17 hours, 45 minutes
+Processor  : Intel(R) Xeon(R) CPU E3-1245 V2 @ 3.40GHz
+CPU cores  : 1 @ 3501.998 MHz
+AES-NI     : ✔ Enabled
+VM-x/AMD-V : ✔ Enabled
+RAM        : 473.3 MiB
+Swap       : 1024.0 MiB
+Disk       : 9.8 GiB
+Distro     : Debian GNU/Linux 11 (bullseye)
+Kernel     : 5.10.0-21-amd64
+VM Type    : KVM
+IPv4/IPv6  : ✔ Online / ✔ Online
+
+IPv6 Network Information:
+---------------------------------
+ISP        : OVH SAS
+ASN        : AS16276 OVH SAS
+Host       : OVH SAS
+Location   : Roubaix, Hauts-de-France (HDF)
+Country    : France
+
+fio Disk Speed Tests (Mixed R/W 50/50) (Partition /dev/sda1):
+---------------------------------
+Block Size | 4k            (IOPS) | 64k           (IOPS)
+  ------   | ---            ----  | ----           ----
+Read       | 1.02 MB/s      (256) | 15.53 MB/s     (242)
+Write      | 1.05 MB/s      (264) | 16.05 MB/s     (250)
+Total      | 2.08 MB/s      (520) | 31.58 MB/s     (492)
+           |                      |
+Block Size | 512k          (IOPS) | 1m            (IOPS)
+  ------   | ---            ----  | ----           ----
+Read       | 122.80 MB/s    (239) | 194.10 MB/s    (189)
+Write      | 129.33 MB/s    (252) | 207.03 MB/s    (202)
+Total      | 252.13 MB/s    (491) | 401.13 MB/s    (391)
+
+iperf3 Network Speed Tests (IPv4):
+---------------------------------
+Provider        | Location (Link)           | Send Speed      | Recv Speed      | Ping
+-----           | -----                     | ----            | ----            | ----
+Clouvider       | London, UK (10G)          | 94.5 Mbits/sec  | 99.8 Mbits/sec  | 4.99 ms
+Eranium         | Amsterdam, NL (10G)       | 94.1 Mbits/sec  | 99.8 Mbits/sec  | --
+Telia           | Helsinki, FI (10G)        | busy            | busy            | 37.2 ms
+Uztelecom       | Tashkent, UZ (10G)        | 34.4 Mbits/sec  | 97.7 Mbits/sec  | 103 ms
+Leaseweb        | Singapore, SG (10G)       | 9.87 Mbits/sec  | 83.9 Mbits/sec  | 251 ms
+Clouvider       | Los Angeles, CA, US (10G) | 25.0 Mbits/sec  | 95.4 Mbits/sec  | 138 ms
+Leaseweb        | NYC, NY, US (10G)         | 36.3 Mbits/sec  | 97.7 Mbits/sec  | 78.4 ms
+Edgoo           | Sao Paulo, BR (1G)        | 14.0 Mbits/sec  | 95.4 Mbits/sec  | 140 ms
+
+iperf3 Network Speed Tests (IPv6):
+---------------------------------
+Provider        | Location (Link)           | Send Speed      | Recv Speed      | Ping
+-----           | -----                     | ----            | ----            | ----
+Clouvider       | London, UK (10G)          | 93.5 Mbits/sec  | 98.2 Mbits/sec  | 4.79 ms
+Eranium         | Amsterdam, NL (10G)       | busy            | busy            | --
+Uztelecom       | Tashkent, UZ (10G)        | 23.0 Mbits/sec  | busy            | 103 ms
+Leaseweb        | Singapore, SG (10G)       | 12.1 Mbits/sec  | 79.5 Mbits/sec  | 251 ms
+Clouvider       | Los Angeles, CA, US (10G) | 22.7 Mbits/sec  | 94.0 Mbits/sec  | 139 ms
+Leaseweb        | NYC, NY, US (10G)         | 35.4 Mbits/sec  | busy            | 78.4 ms
+Edgoo           | Sao Paulo, BR (1G)        | 10.7 Mbits/sec  | 94.0 Mbits/sec  | 140 ms
+
+Geekbench test failed and low memory was detected. Add at least 1GB of SWAP or use GB4 instead (higher compatibility with low memory systems).
+
+YABS completed in 217 min 47 sec

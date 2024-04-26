@@ -35,10 +35,10 @@ liveStreamId = 'erZVG1hphL0'
 bulletRefresh = 3
 
 # 数据库配置
-host = "us2.chenyifaer.online"
+host = "127.0.0.1"
 port = 3306
 user = "root"
-password = "5267373"
+password = "12345678"
 database = "yt_live_chat_analyse"
 live_date = None
 # 打开数据库连接
