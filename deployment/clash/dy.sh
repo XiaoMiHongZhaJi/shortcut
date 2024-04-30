@@ -15,7 +15,7 @@ calculate_time_difference() {
 
     # 获取修改时间的时间戳
     #modified=$1
-	modified=$(</dev/stdin)
+    modified=$(</dev/stdin)
     modified=$(date -ud "$modified" +%s)
 
     # 计算时间差

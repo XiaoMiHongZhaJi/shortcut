@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# 同步时间
+apt install ntpdate -y
+ntpdate ntp.aliyun.com
+
 ## 时区
 # 启用 NTP 服务
 timedatectl set-ntp true

@@ -5,13 +5,13 @@
 declare -a url_src
 
 url_src[0]="https://www.chenyifaer.shop/mysub/xxx"
-url_src[1]="https://export.xingct.com/ifafa-67373"
+url_src[1]="https://export.xingct.com/ifafa-xxxxx"
 
 #config="ACL4SSR_NoApple.ini"
-config="wky.ini"
+config="xxx.ini"
 
 url_prefix="https://www.chenyifaer.shop/sub?target=clash&url="
-url_suffix="&config=config/${config}"
+url_suffix="&config=config/${config}&udp=true"
 
 #编码 echo '手机' | tr -d '\n' | xxd -plain | sed 's/\(..\)/%\1/g'
 #解码 echo -n $url | sed 's/\\/\\\\/g;s/\(%\)\([0-9a-fA-F][0-9a-fA-F]\)/\\x\2/g'
@@ -42,6 +42,7 @@ url=${url_prefix}${url}${url_suffix}
 echo "开始下载url:
 ${url}"
 wget ${url} -q -O dy.yaml
+#curl -s ${url} | sed 's/skip-cert-verify: false/skip-cert-verify: true/g' > dy.yaml
 
 calculate_time_difference() {
     # 获取当前时间的时间戳
