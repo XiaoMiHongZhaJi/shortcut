@@ -13,3 +13,6 @@
 # auto_space
 5  4    * * *   root    /root/auto_space/auto_space.sh >> /root/auto_space/auto_space.log
 
+
+# ntp
+0  0    * * *   root    /usr/sbin/ntpdate ntp.aliyun.com

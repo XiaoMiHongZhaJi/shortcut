@@ -1,7 +1,9 @@
 
 alias df='df -h'
-alias n='netstat -anp | grep $*'
+alias net='netstat -anp | grep $*'
+
 alias p='ps -ef | grep $*'
 alias h='history | grep $*'
 
-alias net='nethogs -d 2'
+alias n='nethogs -d 2'
+alias v="vnstat -h | sed -e 's/t/⬆/g' -e 's/r/⬇/g'"

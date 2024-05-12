@@ -3,7 +3,7 @@
 # 下载
 url="https://www.chenyifaer.shop/mysub/xxxx"
 
-cd /etc/clash
+cd /etc/clash/
 
 echo "开始下载订阅:
 ${url}"

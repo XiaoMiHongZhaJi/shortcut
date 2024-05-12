@@ -1,0 +1,58 @@
+项目地址 https://github.com/lmc999/RegionRestrictionCheck
+改版地址 https://github.com/xykt/RegionRestrictionCheck
+脚本适配OS: CentOS 6+, Ubuntu 14.04+, Debian 8+, MacOS, Android (Termux), iOS (iSH)
+
+ ** 测试时间: Wed 01 May 2024 11:56:44 AM EDT
+
+ ** 正在测试IPv4解锁情况
+--------------------------------
+ ** 您的网络为: OVH SAS (188.165.*.*)
+
+
+============[ Multination ]============
+ Dazn:                  原生解锁        Yes (Region: FR)
+ TikTok:                原生解锁        Yes (Region: FR)
+ HotStar:                               No
+ Disney+:                               No
+ Netflix:                               Failed (Network Connection)
+ YouTube Premium:       原生解锁        Yes (Region: FR)
+ Amazon Prime Video:    原生解锁        Yes (Region: FR)
+ TVBAnywhere+:          原生解锁        Yes
+ iQyi Oversea Region:   原生解锁        FR
+ Viu.com:                               No
+ YouTube CDN:                           Paris
+ Netflix Preferred CDN:                 Failed
+ Spotify Registration:                  No
+ Steam Currency:                        EUR
+ ChatGPT:               原生解锁        Website Only (Region: FR)
+ Bing Region:                           FR
+ Instagram Licensed Audio:              No
+=======================================
+
+
+ ** 正在测试IPv6解锁情况
+--------------------------------
+ ** 您的网络为: OVH SAS (2001:41d0:2:*:*)
+
+
+============[ Multination ]============
+ Dazn:                                  Failed (Network Connection)
+ TikTok:                原生解锁        Yes (Region: FR)
+ HotStar:                               No
+ Disney+:                               No
+ Netflix:                               Failed (Network Connection)
+ YouTube Premium:       原生解锁        Yes (Region: FR)
+ Amazon Prime Video:                    Unsupported
+ TVBAnywhere+:                          Failed (Network Connection)
+ iQyi Oversea Region:                   Failed
+ Viu.com:                               Failed
+ YouTube CDN:                           LILLIXFR in Lille
+ Netflix Preferred CDN:                 Failed
+ Spotify Registration:                  No
+ Steam Currency:                        Failed (Network Connection)
+ ChatGPT:                               No
+ Bing Region:                           FR
+ Instagram Licensed Audio:              No
+=======================================
+本次测试已结束，感谢使用此脚本
+检测脚本当天运行次数: 815; 共计运行次数: 57141

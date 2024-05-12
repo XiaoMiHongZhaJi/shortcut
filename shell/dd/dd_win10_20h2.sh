@@ -19,7 +19,7 @@
  #密码: Teddysun.com
 
 #注：DebianNET.sh 脚本由 Vicer 开发，参考网址：https://moeclub.org
-#wget -qO DebianNET.sh qiu.sh/dd && bash DebianNET.sh -dd "DD download URL"
+#wget -qO DebianNET.sh qiu.sh/dd && bash DebianNET.sh -dd https://fr1.teddyvps.com/iso/cn_windows10_20h2.gz
 
 # Win10
 wget -qO- inst.sh | bash -s - -t https://fr1.teddyvps.com/iso/cn_windows10_20h2.gz

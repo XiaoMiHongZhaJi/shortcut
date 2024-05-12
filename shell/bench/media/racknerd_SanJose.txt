@@ -1,0 +1,56 @@
+ ** 测试时间: Sun 12 May 2024 10:10:50 AM CST
+
+ ** 正在测试IPv4解锁情况
+--------------------------------
+ ** 您的网络为: ColoCrossing (107.172.*.*)
+
+
+============[ Multination ]============
+ Dazn:                  原生解锁        Yes (Region: US)
+ TikTok:                原生解锁        Yes (Region: US)
+ Disney+:                               No
+ Netflix:                               Failed (Network Connection)
+ YouTube Premium:       原生解锁        No  (Region: CN)
+ Amazon Prime Video:    原生解锁        Yes (Region: US)
+ TVBAnywhere+:          原生解锁        Yes
+ iQyi Oversea Region:   原生解锁        US
+ YouTube Region:                        Check Failed (Network Connection)
+ Netflix Preferred CDN:                 Failed
+ Spotify Registration:                  No
+ Steam Currency:                        USD
+ ChatGPT:               原生解锁        Yes (Region: US)
+ Bing Region:                           US
+ Wikipedia Editability:                 No
+ Instagram Licensed Audio:              Yes
+ ---Forum---
+ Reddit:                                No
+=======================================
+
+
+ ** 正在测试IPv6解锁情况
+--------------------------------
+ ** 您的网络为: Hurricane Electric IPv6 tunnel broker (2001:470:a:*:*)
+
+
+============[ Multination ]============
+ Dazn:                                  Failed (Network Connection)
+ TikTok:                原生解锁        Yes (Region: US)
+ Disney+:               原生解锁        Yes (Region: US)
+ Netflix:               原生解锁        Yes (Region: US)
+ YouTube Premium:       原生解锁        No  (Region: CN)
+ Amazon Prime Video:                    Unsupported
+ TVBAnywhere+:                          Failed (Network Connection)
+ iQyi Oversea Region:                   Failed
+ YouTube Region:                        Check Failed (Network Connection)
+ Netflix Preferred CDN:                 Seattle, WA
+ Spotify Registration:                  No
+ Steam Currency:                        Failed (Network Connection)
+ ChatGPT:                               Failed
+ Bing Region:                           US
+ Wikipedia Editability:                 No
+ Instagram Licensed Audio:              Yes
+ ---Forum---
+ Reddit:                                Failed (Network Connection)
+=======================================
+本次测试已结束，感谢使用此脚本
+检测脚本当天运行次数: 62; 共计运行次数: 64881

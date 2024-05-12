@@ -1,0 +1,58 @@
+项目地址 https://github.com/lmc999/RegionRestrictionCheck
+改版地址 https://github.com/xykt/RegionRestrictionCheck
+脚本适配OS: CentOS 6+, Ubuntu 14.04+, Debian 8+, MacOS, Android (Termux), iOS (iSH)
+
+ ** 测试时间: Wed 01 May 2024 05:53:07 PM CEST
+
+ ** 正在测试IPv4解锁情况
+--------------------------------
+ ** 您的网络为: Cloudflare Warp (104.28.*.*)
+
+
+============[ Multination ]============
+ Dazn:                  原生解锁        Yes (Region: DE)
+ TikTok:                原生解锁        Yes (Region: DE)
+ HotStar:                               No
+ Disney+:               原生解锁        Yes (Region: DE)
+ Netflix:               原生解锁        Yes (Region: DE)
+ YouTube Premium:       原生解锁        Yes (Region: DE)
+ Amazon Prime Video:    原生解锁        Yes (Region: DE)
+ TVBAnywhere+:          原生解锁        Yes
+ iQyi Oversea Region:   原生解锁        US
+ Viu.com:                               No
+ YouTube CDN:                           Frankfurt
+ Netflix Preferred CDN:                 Dusseldorf
+ Spotify Registration:                  No
+ Steam Currency:                        EUR
+ ChatGPT:               原生解锁        Yes (Region: DE)
+ Bing Region:                           DE
+ Instagram Licensed Audio:              No
+=======================================
+
+
+ ** 正在测试IPv6解锁情况
+--------------------------------
+ ** 您的网络为: Hetzner Online (2a01:4f8:251:*:*)
+
+
+============[ Multination ]============
+ Dazn:                                  Failed (Network Connection)
+ TikTok:                原生解锁        Yes (Region: DE)
+ HotStar:                               No
+ Disney+:                               No
+ Netflix:               原生解锁        Originals Only
+ YouTube Premium:                       No
+ Amazon Prime Video:                    Unsupported
+ TVBAnywhere+:                          Failed (Network Connection)
+ iQyi Oversea Region:                   Failed
+ Viu.com:                               Failed
+ YouTube CDN:                           Frankfurt
+ Netflix Preferred CDN:                 Frankfurt
+ Spotify Registration:                  No
+ Steam Currency:                        Failed (Network Connection)
+ ChatGPT:                               Failed
+ Bing Region:                           DE
+ Instagram Licensed Audio:              Yes
+=======================================
+本次测试已结束，感谢使用此脚本
+检测脚本当天运行次数: 810; 共计运行次数: 57136
